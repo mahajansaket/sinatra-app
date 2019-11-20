@@ -1,0 +1,12 @@
+<p>Name: <%=@comment.name%> </p>
+<p>Content: <%=@comment.content%> </p>
+<p>Time stamp: <%=@comment.created_at%> </p>
+
+<p><a href="/comments">Back To List</a></p>
+
+<p><a href="/comments/<%=@comment.id%>/edit">Edit</a></p>
+
+<form action='/comments/<%=@comment.id%>' method='post'>
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Student">
+</form>

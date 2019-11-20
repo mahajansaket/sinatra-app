@@ -1,0 +1,23 @@
+<label>
+  First Name:   <input type="text" minlength=1 name=student[firstname] value="<%= @student.firstname %>">
+</label>
+<br>
+<label>
+  Last Name:    <input type="text" minlength="1" name=student[lastname] value="<%= @student.lastname %>">
+</label>
+<br>
+<label>
+  Studentid:    <input type="text" minlength="1" name=student[studentId] value="<%= @student.studentId %>">
+</label>
+<br>
+<label>
+  Birthday:     <input type="date" name=student[birthday] value="<%= @student.birthday %>">
+</label>
+<br>
+<label>
+  <%# must QUOTE value, or ANYTHING after space will be discard %>
+  Address:      <input type="text" name=student[address] value="<%= @student.address %>">
+</label>
+<br>
+<button type="submit" class="submitbtn">Login</button>
+<button type="button" onclick="window.history.back();" class="cancelbtn">Cancel</button>

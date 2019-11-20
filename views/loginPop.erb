@@ -1,0 +1,51 @@
+<% if session[:logged] %>
+  <a href="/logout">Logout</a>
+<% else %>
+  <a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
+<% end %>
+
+<!-- popup login -->
+<div id="id01" class="modal">
+  <form class="modal-content animate" action="/login" method='post'>
+
+    <!-- avatar / close button -->
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <!-- avatar -->
+      <img src="images/avatar.jpg" alt="Avatar" class="avatar">
+    </div>
+
+    <!-- username / password -->
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="username" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required>
+      
+      <!-- hidden field to transfer title for redirecting -->
+      <input type="hidden" name="title" value="<%= @title%>">
+        
+      
+    </div>
+
+    <!-- button-login -->
+    <div class="container" >
+      <button type="submit" class="submitbtn">Login</button>
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+
+  </form>
+</div>
+
+<script>
+// get the pop-up obj
+var modal = document.getElementById('id01');
+
+// close when the user clicks outside of the pop-up
+window.onclick = function(event) {
+  if (event.target == modal) {
+      modal.style.display = "none";
+  }  
+}
+</script>

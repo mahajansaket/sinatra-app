@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- comment -->
+
+<!-- CSS -->
+<link href="/style.css" rel="stylesheet" type="text/css">
+<link href="/login.css" rel="stylesheet" type="text/css">
+
+<!-- browser title -->
+<title><%= @title || "Student Information System"%></title>
+
+</head>
+
+<body>
+
+<!-- header image / title -->
+<div class="container">
+  <img src="/images/students.png" alt="Students" width=50% align = "left">
+
+  <h1 align="right" color="g">Student</h1>
+  <h1 align="right">Information</h1>
+  <h1 align="right">System</h1>
+</div>
+
+<!-- naviBar -->
+<div class="container">
+  <%= erb :naviBar %>
+</div>
+
+<!-- appended info -->
+<%= yield %>
+
+</body>
+</html>

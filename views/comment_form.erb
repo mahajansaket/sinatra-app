@@ -1,0 +1,11 @@
+<label>
+  Name:     <input type="text" minlength=1 name=comment[name] value=<%= @comment.name %>>
+</label>
+<br>
+<label>
+  Content:  <input type="text" minlength="1" name=comment[content] value=<%= @comment.content %>>
+</label>
+<br>
+
+<button type="submit" class="submitbtn">Save</button>
+<button type="button" class="cancelbtn" onclick="window.history.back();" >Cancel</button>

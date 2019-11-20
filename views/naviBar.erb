@@ -1,0 +1,10 @@
+<div class="topnav">
+
+  <% naviTabs = ["Home", "About", "Students", "Comments", "Video"]%>
+  <% naviTabs.each do |item| %>
+    <a <%= 'class="active"' if item == @title %> href="/<%= item.downcase%>"><%= item%></a>
+  <% end %>
+
+  <%= erb :loginPop%>
+
+</div>

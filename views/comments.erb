@@ -1,0 +1,25 @@
+<h2 text-align = "right">Comments list </h2>
+
+<% if @comments.any? %>
+    <% @comments.each do |comment| %>
+        <ul>
+            <a href="/comments/<%= comment.id %>">
+                <%= comment.name %> - <%= comment.created_at %></a> 
+        </ul>
+    <% end %>
+    <div class="container" >
+    <form action='/comments/new' method='get'>
+        <button type="submit" value="New Comment" class="submitbtn">New</button>
+    </form>
+
+    <form action='/comments/clear' method='post'>
+        <button type="submit" value="Clear list" class="cancelbtn">Clear</button>
+    </form>
+    </div>
+
+<% else %>
+    <p>No comment information</p>
+    <form action='/comments/default' method='post'>
+        <button type="submit" value="Restore Default Comment list">Restore List</button>
+    </form>
+<% end %>

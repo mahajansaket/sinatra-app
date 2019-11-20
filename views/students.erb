@@ -1,0 +1,24 @@
+<h2 text-align = "right">Students list </h2>
+
+<% if @students.any? %>
+    <% @students.each do |student| %>
+        <ul>
+            <a href="/students/<%= student.id %>">
+                <%= student.firstname << " " << student.lastname %></a> 
+        </ul>
+    <% end %>
+
+    <form action='/students/new' method='get'>
+        <input type="submit" value="New Student">
+    </form>
+
+    <form action='/students/clear' method='post'>
+        <input type="submit" value="Clear list">
+    </form>
+
+<% else %>
+    <p>No student information</p>
+    <form action='/students/default' method='post'>
+        <input type="submit" value="Restore Default Student list">
+    </form>
+<% end %>
