@@ -7,7 +7,7 @@ Password: pass
 
 ## Remote address
 
-https://smahajan.com
+https://agile-cove-39529.herokuapp.com/
 
 ## Local Run
 
